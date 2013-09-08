@@ -18,8 +18,6 @@ namespace QuickMsgs
 
         private void Form1Load(object sender, EventArgs e)
         {
-            panelTop.Controls.Clear();
-            panelTop.Controls.Add(new UserControlAddNewText(this));
             RefreshCopiedTexts();
         }
 
@@ -34,26 +32,32 @@ namespace QuickMsgs
                 _position += 55;
                 panelBottom.Controls.Add(control);
             }
+
+            var userControlAddNewText = new UserControlAddNewText(this) {Location = new Point(10, _position)};
+            panelBottom.Controls.Add(userControlAddNewText);            
         }
 
         public void AddText(string text)
         {
-            var control = new UserControlCopiedText(text, this) {Location = new Point(10, _position)};
-            _position += 55;
-            panelBottom.Controls.Add(control);
+            RefreshCopiedTexts();
+            UpdateStatus("New msg added");
         }
 
         public void DeleteText(string text)
         {
-            if (panelBottom.Controls.Count > 0)
-                foreach (UserControlCopiedText userControlCopiedText in panelBottom.Controls)
+            if (panelBottom.Controls.Count > 1)
+                for (int index = 0; index < panelBottom.Controls.Count - 1; index++)
+                {
+                    var userControlCopiedText = (UserControlCopiedText) panelBottom.Controls[index];
                     if (text == userControlCopiedText.GetText())
                     {
                         ClipboardManager.Instance.DeleteText(text);
                         panelBottom.Controls.Remove(userControlCopiedText);
                     }
+                }
 
             RefreshCopiedTexts();
+            UpdateStatus("msg deleted");
         }
 
         public void UpdateStatus(string text)

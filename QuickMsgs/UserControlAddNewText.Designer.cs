@@ -33,12 +33,11 @@
             // 
             // textBoxNewText
             // 
-            this.textBoxNewText.Location = new System.Drawing.Point(3, 3);
+            this.textBoxNewText.Location = new System.Drawing.Point(12, 16);
             this.textBoxNewText.MaxLength = 40;
-            this.textBoxNewText.Multiline = true;
             this.textBoxNewText.Name = "textBoxNewText";
             this.textBoxNewText.ReadOnly = true;
-            this.textBoxNewText.Size = new System.Drawing.Size(394, 94);
+            this.textBoxNewText.Size = new System.Drawing.Size(324, 20);
             this.textBoxNewText.TabIndex = 0;
             this.textBoxNewText.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxNewText_KeyUp);
             this.textBoxNewText.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.textBoxNewText_MouseDoubleClick);
@@ -47,9 +46,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.textBoxNewText);
             this.Name = "UserControlAddNewText";
-            this.Size = new System.Drawing.Size(400, 100);
+            this.Size = new System.Drawing.Size(348, 48);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace QuickMsgs
 {
@@ -9,24 +10,36 @@ namespace QuickMsgs
         {
             InitializeComponent();
             _form = form;
+            MakeReadOnly();
+        }
+
+        private void MakeReadOnly()
+        {            
+            textBoxNewText.Text = "Double click to add new msg";
+            textBoxNewText.ForeColor = Color.DarkGray;
+            textBoxNewText.ReadOnly = true;
+        }
+
+        private void MakeEditable()
+        {
+            textBoxNewText.ReadOnly = false;
+            textBoxNewText.Text = "";
+            textBoxNewText.ForeColor = Color.LimeGreen;
         }
 
         private void textBoxNewText_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            var textBox = (TextBox) sender;
-            textBox.ReadOnly = false;
+        {            
+            MakeEditable();
         }
 
         private void textBoxNewText_KeyUp(object sender, KeyEventArgs e)
         {
             var textBox = (TextBox)sender;
-            if(textBox.ReadOnly == true) return;
+            if(textBox.ReadOnly) return;
 
             if (e.KeyCode == Keys.Escape)
             {
-                textBox.Text = "";
-                textBox.ReadOnly = true;
-                return;
+                MakeReadOnly();
             }
 
             if (e.KeyCode != Keys.Enter) return;
@@ -35,14 +48,12 @@ namespace QuickMsgs
             var text = textBox.Text.Trim();
             if(text.Length == 0)
             {
-                textBox.Text = "";
-                textBox.ReadOnly = true;
+                MakeReadOnly();
                 return;                
             }
 
             ClipboardManager.Instance.AddText(text);
-            textBox.Text = "";
-            textBox.ReadOnly = true;
+            MakeReadOnly();
 
             _form.AddText(text);
         }
