@@ -17,9 +17,8 @@ namespace QuickMsgs
             get { return _instance ?? (_instance = new ClipboardManager()); }
         }
 
-
         private readonly string _dataFilePath;
-        private XDocument _document;
+        private readonly XDocument _document;
         
         private const string NodeName = "CBT";
 
