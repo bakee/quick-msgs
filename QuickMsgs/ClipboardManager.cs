@@ -94,12 +94,6 @@ namespace QuickMsgs
         public List<string> GetAllTexts()
         {
             var cbts = _document.Root.Descendants();
-
-            foreach (var element in cbts)
-            {
-                var text = element.Value;
-            }
-
             return (from c in cbts select c.Value.Trim()).ToList();
         }
     }
