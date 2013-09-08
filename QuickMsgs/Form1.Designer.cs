@@ -86,7 +86,7 @@
             notifyIcon1.Tag = "Quick Msg";
             notifyIcon1.Text = "Quick Msg";
             notifyIcon1.Visible = true;
-            notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon1MouseDoubleClick);
             // 
             // contextMenuStrip1
             // 
@@ -101,14 +101,14 @@
             this.showHideToolStripMenuItem.Name = "showHideToolStripMenuItem";
             this.showHideToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.showHideToolStripMenuItem.Text = "Show/Hide";
-            this.showHideToolStripMenuItem.Click += new System.EventHandler(this.showHideToolStripMenuItem_Click);
+            this.showHideToolStripMenuItem.Click += new System.EventHandler(this.ShowHideToolStripMenuItemClick);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItemClick);
             // 
             // Form1
             // 
@@ -123,8 +123,8 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Quick Msgs";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1FormClosing);
+            this.Load += new System.EventHandler(this.Form1Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);

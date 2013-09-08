@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -8,18 +7,16 @@ namespace QuickMsgs
     public partial class Form1 : Form
     {
         private int _position;
-        private bool _isWindowShown;
         private bool _isExitRequested;
         private bool _isHidden;
 
         public Form1()
         {
             InitializeComponent();
-            _isWindowShown = true;
             _isExitRequested = false;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1Load(object sender, EventArgs e)
         {
             panelTop.Controls.Clear();
             panelTop.Controls.Add(new UserControlAddNewText(this));
@@ -33,8 +30,7 @@ namespace QuickMsgs
             panelBottom.Controls.Clear();
             foreach (var text in allTexts)
             {
-                var control = new UserControlCopiedText(text, this);
-                control.Location = new Point(10, _position);
+                var control = new UserControlCopiedText(text, this) {Location = new Point(10, _position)};
                 _position += 55;
                 panelBottom.Controls.Add(control);
             }
@@ -42,8 +38,7 @@ namespace QuickMsgs
 
         public void AddText(string text)
         {
-            var control = new UserControlCopiedText(text, this);
-            control.Location = new Point(10, _position);
+            var control = new UserControlCopiedText(text, this) {Location = new Point(10, _position)};
             _position += 55;
             panelBottom.Controls.Add(control);
         }
@@ -66,17 +61,17 @@ namespace QuickMsgs
             toolStripStatusLabel1.Text = text;
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void Form1FormClosing(object sender, FormClosingEventArgs e)
         {
             if(!_isExitRequested)
             {
-                this.Hide();
+                Hide();
                 _isHidden = true;
                 e.Cancel = true;
             }
         }
 
-        private void showHideToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ShowHideToolStripMenuItemClick(object sender, EventArgs e)
         {
             if (_isHidden)
             {
@@ -90,13 +85,13 @@ namespace QuickMsgs
             }
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItemClick(object sender, EventArgs e)
         {
             _isExitRequested = true;
             Close();
         }
 
-        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void NotifyIcon1MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (_isHidden)
             {

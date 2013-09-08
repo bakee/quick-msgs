@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ClipboardManager")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Quick Msgs")]
+[assembly: AssemblyDescription("Helps type short frequent messages quickly!")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ClipboardManager")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("pSolvers")]
+[assembly: AssemblyProduct("Quic Msgs")]
+[assembly: AssemblyCopyright("Copyright © pSolvers  2013")]
+[assembly: AssemblyTrademark("pSolvers")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
