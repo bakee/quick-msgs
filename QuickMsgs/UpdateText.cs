@@ -10,6 +10,7 @@ namespace QuickMsgs
             InitializeComponent();
             labelOldTextValue.Text = oldText;
             textBoxNewTextValue.Text = oldText;
+            textBoxNewTextValue.MaxLength = Constants.MaximumMessageLength;
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)

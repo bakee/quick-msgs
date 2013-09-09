@@ -48,7 +48,7 @@
             // textBoxNewTextValue
             // 
             this.textBoxNewTextValue.Location = new System.Drawing.Point(68, 35);
-            this.textBoxNewTextValue.MaxLength = 40;
+            this.textBoxNewTextValue.MaxLength = 200;
             this.textBoxNewTextValue.Name = "textBoxNewTextValue";
             this.textBoxNewTextValue.Size = new System.Drawing.Size(318, 20);
             this.textBoxNewTextValue.TabIndex = 8;

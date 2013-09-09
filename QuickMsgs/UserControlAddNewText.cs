@@ -9,6 +9,7 @@ namespace QuickMsgs
         public UserControlAddNewText(Form1 form)
         {
             InitializeComponent();
+            textBoxNewText.MaxLength = Constants.MaximumMessageLength;
             _form = form;
             MakeReadOnly();
         }

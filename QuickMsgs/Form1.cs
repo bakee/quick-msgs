@@ -73,6 +73,14 @@ namespace QuickMsgs
                 _isHidden = true;
                 e.Cancel = true;
             }
+            else
+            {
+                if (MessageBox.Show("This will close the application. Are you sure to do that ?", "Exit Confirmation", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    _isExitRequested = false;
+                    e.Cancel = true;
+                }
+            }
         }
 
         private void ShowHideToolStripMenuItemClick(object sender, EventArgs e)

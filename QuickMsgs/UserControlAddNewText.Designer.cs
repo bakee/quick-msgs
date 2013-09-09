@@ -34,7 +34,7 @@
             // textBoxNewText
             // 
             this.textBoxNewText.Location = new System.Drawing.Point(12, 16);
-            this.textBoxNewText.MaxLength = 40;
+            this.textBoxNewText.MaxLength = 200;
             this.textBoxNewText.Name = "textBoxNewText";
             this.textBoxNewText.ReadOnly = true;
             this.textBoxNewText.Size = new System.Drawing.Size(324, 20);
